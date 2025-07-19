@@ -24,6 +24,13 @@ import dashboard from "./dashboard.png";
 import blackDashboard from "./blackDashboard.png";
 import solarSystem from './solarSystem.png';
 
+
+
+import githubIcon from './githubicon.png';
+import gmailIcon from './gmailicon.png';
+import linkedinIcon from './linkedinicon.png';
+import cancelicon from './cancelicon.png';
+
 export {
   logo,
   github,
@@ -45,5 +52,9 @@ export {
   jquery,
   Bootstrap,
   sass,
-  solarSystem
+  solarSystem,
+  githubIcon,
+  gmailIcon,
+  linkedinIcon,
+  cancelicon
 };
