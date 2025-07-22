@@ -4,9 +4,12 @@ import { slideIn } from '../utils/motion';
 import SectionWrapper from '../hoc/SectionWrapper';
 import EarthCanvas from './canvas/Earth';
 import emailjs from '@emailjs/browser';
+import MessageSuccess from './MessageSuccess';
 
 
 const Contact = () => {
+
+  const [success , setSuccess] = useState(false);
 
   const form = useRef();
 
@@ -22,7 +25,10 @@ const Contact = () => {
         )
       .then(
         () => {
-          console.log('SUCCESS!');
+          setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+            }, 3000); 
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -33,6 +39,7 @@ const Contact = () => {
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      {success && <MessageSuccess />}
       <motion.div variants={slideIn('left','tween',0.2,1)} 
       className=" flex-[0.75] p-8 rounded-2xl m-5"
       style={{backgroundColor: 'rgba(29, 24, 54  , 1)'}}
